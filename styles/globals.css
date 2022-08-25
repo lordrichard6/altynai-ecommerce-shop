@@ -24,9 +24,18 @@ a {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: black;
+    color: #111111;
+    background: #fff;
   }
+}
+
+.page-background {
+  /* background: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);  
+  background: linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);  */
+}
+
+.nav-background {
+  /* background: #FDB99B; */
 }
 
 .card {
