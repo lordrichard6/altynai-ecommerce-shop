@@ -9,10 +9,10 @@ const data = {
       isAdmin: true,
     },
     {
-      name: "Jane",
-      email: "user@example.com",
+      name: "Altynai",
+      email: "altynai@sexy.com",
       password: bcrypt.hashSync("123456"),
-      isAdmin: false,
+      isAdmin: true,
     },
   ],
   products: [
