@@ -37,7 +37,7 @@ export default function Layout({ title, children }) {
       <ToastContainer position="bottom-center" limit={1} />
       <div className="flex min-h-screen flex-col justify-between page-background">
         <header>
-          <nav className="flex h-22 justify-between items-center shadow-md px-4 nav-background">
+          <nav className="flex h-22 justify-between items-center shadow-md px-4 bg-slate-100 nav-background">
             <Link href="/">
               <a className="text-lg font-bold w-2">
                 <Image

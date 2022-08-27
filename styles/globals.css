@@ -32,6 +32,7 @@ a {
 .page-background {
   /* background: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);  
   background: linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);  */
+  background: linear-gradient(to right, #ffafbd, #ffc3a0);
 }
 
 .nav-background {
@@ -43,7 +44,7 @@ a {
 }
 
 .primary-button {
-  @apply rounded bg-amber-300 py-2 px-4 shadow outline-none hover:bg-amber-400 active:bg-amber-500;
+  @apply rounded bg-rose-300 py-2 px-4 shadow outline-none hover:bg-rose-400 active:bg-rose-500 text-slate-100;
 }
 
 input,
