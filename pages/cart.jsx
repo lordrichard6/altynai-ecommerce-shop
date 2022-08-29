@@ -58,6 +58,7 @@ function CartScreen() {
                             alt={item.name}
                             width={50}
                             height={50}
+                            objectFit="cover"
                           ></Image>
                           &nbsp;
                           {item.name}
@@ -89,7 +90,7 @@ function CartScreen() {
               </tbody>
             </table>
           </div>
-          <div className="card p-5">
+          <div className="card p-5 bg-slate-100">
             <ul>
               <li>
                 <div className="pb-3 text-xl">

@@ -32,7 +32,7 @@ a {
 .page-background {
   /* background: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);  
   background: linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);  */
-  background: linear-gradient(to right, #ffafbd, #ffc3a0);
+  background: linear-gradient(to right, #ffafbc96, #ffc3a08d);
 }
 
 .nav-background {
@@ -40,7 +40,7 @@ a {
 }
 
 .card {
-  @apply mb-5 block rounded-lg border border-gray-200 shadow-md;
+  @apply mb-5 block rounded-lg border bg-slate-100 border-gray-200 shadow-md;
 }
 
 .primary-button {
@@ -63,4 +63,12 @@ a {
 
 .default-button {
   @apply rounded bg-gray-100 py-2 px-4 text-black shadow outline-none hover:bg-gray-200 active:bg-gray-300
+}
+
+.alert-error {
+  @apply my-3 rounded-lg bg-red-100 p-3 text-red-700;
+}
+
+.alert-success {
+  @apply my-3 rounded-lg bg-green-100 p-3 text-green-700;
 }
