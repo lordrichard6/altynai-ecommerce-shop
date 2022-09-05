@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Cookies from "js-cookie";
 import { Menu } from "@headlessui/react";
 import DropdownLink from "./DropdownLink";
+import { IoIosCart, IoIosContact } from "react-icons/io";
 
 export default function Layout({ title, children }) {
   const { status, data: session } = useSession();
@@ -37,7 +38,7 @@ export default function Layout({ title, children }) {
       <ToastContainer position="bottom-center" limit={1} />
       <div className="flex min-h-screen flex-col justify-between page-background">
         <header>
-          <nav className="flex h-22 justify-between items-center shadow-md px-4 bg-slate-100 nav-background">
+          <nav className="flex h-22 z-10 justify-between items-center shadow-md px-2 lg:px-28 bg-slate-100">
             <Link href="/">
               <a className="text-lg font-bold w-2">
                 <Image
@@ -49,12 +50,13 @@ export default function Layout({ title, children }) {
                 />
               </a>
             </Link>
-            <div>
+            <div className="flex relative">
               <Link href="/cart">
                 <a className="p-2">
-                  Cart
+                  {/* Cart */}
+                  <IoIosCart className="h-8 w-8" />
                   {cartItemsCount > 0 && (
-                    <span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-xs font-bold text-white">
+                    <span className="absolute left-6 top-6 ml-1 rounded-full bg-pink-300 px-2 py-1 text-xs font-bold text-white">
                       {cartItemsCount}
                     </span>
                   )}
@@ -63,8 +65,8 @@ export default function Layout({ title, children }) {
               {status === "loading" ? (
                 "Loading"
               ) : session?.user ? (
-                <Menu as="div" className="relative inline-block">
-                  <Menu.Button className="text-blue-600">
+                <Menu as="div" className="relative inline-block z-20">
+                  <Menu.Button className="text-red-600">
                     {session.user.name}
                   </Menu.Button>
                   <Menu.Items className="absolute right-0 w-56 origin-top-right bg-white shadow-lg">
@@ -102,13 +104,16 @@ export default function Layout({ title, children }) {
                 </Menu>
               ) : (
                 <Link href="/login">
-                  <a className="p-2">Login</a>
+                  <a className="p-2">
+                    {/* Login */}
+                    <IoIosContact className="h-8 w-8" />
+                  </a>
                 </Link>
               )}
             </div>
           </nav>
         </header>
-        <main className="container m-auto mt-4 px-4">{children}</main>
+        <main className="container m-auto mt-4 px-4 z-10">{children}</main>
         <footer className="flex h-10 justify-center items-center shadow-inner">
           Copyright © 2022 Altynai Fashion
         </footer>

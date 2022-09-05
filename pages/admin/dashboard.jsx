@@ -49,7 +49,7 @@ function reducer(state, action) {
 function AdminDashboardScreen() {
   const [{ loading, error, summary }, dispatch] = useReducer(reducer, {
     loading: true,
-    summary: { sales: [] },
+    summary: { salesData: [] },
     error: "",
   });
 
