@@ -38,7 +38,7 @@ export default function Layout({ title, children }) {
       <ToastContainer position="bottom-center" limit={1} />
       <div className="flex min-h-screen flex-col justify-between page-background">
         <header>
-          <nav className="flex h-22 z-10 justify-between items-center shadow-md px-2 lg:px-28 bg-slate-100">
+          <nav className="flex h-22 z-10 justify-between items-center shadow-md px-4 lg:px-28 bg-slate-100">
             <Link href="/">
               <a className="text-lg font-bold w-2">
                 <Image
@@ -52,11 +52,11 @@ export default function Layout({ title, children }) {
             </Link>
             <div className="flex relative">
               <Link href="/cart">
-                <a className="p-2">
+                <a className="py-2 px-4">
                   {/* Cart */}
                   <IoIosCart className="h-8 w-8" />
                   {cartItemsCount > 0 && (
-                    <span className="absolute left-6 top-6 ml-1 rounded-full bg-pink-300 px-2 py-1 text-xs font-bold text-white">
+                    <span className="absolute left-8 top-6 ml-1 rounded-full bg-pink-300 px-2 py-1 text-xs font-bold text-white">
                       {cartItemsCount}
                     </span>
                   )}
@@ -65,7 +65,7 @@ export default function Layout({ title, children }) {
               {status === "loading" ? (
                 "Loading"
               ) : session?.user ? (
-                <Menu as="div" className="relative inline-block z-20">
+                <Menu as="div" className="relative flex z-20">
                   <Menu.Button className="text-red-600">
                     {session.user.name}
                   </Menu.Button>
@@ -104,7 +104,7 @@ export default function Layout({ title, children }) {
                 </Menu>
               ) : (
                 <Link href="/login">
-                  <a className="p-2">
+                  <a className="py-2 pl-2">
                     {/* Login */}
                     <IoIosContact className="h-8 w-8" />
                   </a>
@@ -113,7 +113,7 @@ export default function Layout({ title, children }) {
             </div>
           </nav>
         </header>
-        <main className="container m-auto mt-4 px-4 z-10">{children}</main>
+        <main className="container m-auto mt-4 px-4 lg:px-24 z-10">{children}</main>
         <footer className="flex h-10 justify-center items-center shadow-inner">
           Copyright © 2022 Altynai Fashion
         </footer>

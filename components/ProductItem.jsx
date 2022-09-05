@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function ProductItem({ product, addToCartHandler }) {
   return (
-    <div className="card bg-slate-100">
+    <div className="card bg-slate-100 overflow-hidden">
       <Link href={`/product/${product.slug}`}>
         <a>
           <img
@@ -16,8 +16,8 @@ export default function ProductItem({ product, addToCartHandler }) {
       </Link>
       <div className="flex flex-col items-center justify-center p-5">
         <Link href={`/product/${product.slug}`}>
-          <a>
-            <h2 className="text-lg truncate text-ellipsis overflow-hidden ...">{product.name}</h2>
+          <a className="text-lg w-4/5">
+            <h2 className="text-lg truncate text-center">{product.name}</h2>
           </a>
         </Link>
         <p className="mb-2">{product.brand}</p>
