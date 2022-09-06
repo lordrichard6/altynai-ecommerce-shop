@@ -37,7 +37,7 @@ export default function ProductScreen(props) {
         <Link href="/">back to products</Link>
       </div>
       <div className="grid md:grid-cols-4 md:gap-3">
-        <div className="md:col-span-2">
+        <div className="md:col-span-2 rounded overflow-hidden shadow-md">
           <Image
             src={product.image}
             alt={product.name}
@@ -49,25 +49,25 @@ export default function ProductScreen(props) {
         </div>
         <div>
           <ul>
-            <li>
-              <h1 className="text-lg">{product.name}</h1>
+            <li className='py-2 md:pt-0'>
+              <h1 className="text-lg font-bold">{product.name}</h1>
             </li>
-            <li>Category: {product.category}</li>
-            <li>Brand: {product.brand}</li>
-            <li>
-              {product.rating} of {product.numReviews} reviews
+            <li className='py-2'><strong>Category:</strong> {product.category}</li>
+            <li className='py-2'><strong>Brand:</strong> {product.brand}</li>
+            <li className='py-2'>
+            <strong>{product.rating}</strong> of <strong>{product.numReviews}</strong> reviews
             </li>
-            <li>Description: {product.description}</li>
+            <li className='py-2 mb-4'><strong>Description:</strong> {product.description}</li>
           </ul>
         </div>
         <div>
           <div className="card p-5">
             <div className="mb-2 flex justify-between">
-              <div>Price</div>
+              <div><strong>Price</strong></div>
               <div>${product.price}</div>
             </div>
             <div className="mb-2 flex justify-between">
-              <div>Status</div>
+              <div><strong>Status</strong></div>
               <div>{product.countInStock > 0 ? "In stock" : "Unavailable"}</div>
             </div>
             <button

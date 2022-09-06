@@ -113,7 +113,7 @@ export default function Layout({ title, children }) {
             </div>
           </nav>
         </header>
-        <main className="container m-auto mt-4 px-4 lg:px-24 z-10">{children}</main>
+        <main className="container m-auto mt-4 px-4 xl:px-24 z-10">{children}</main>
         <footer className="flex h-10 justify-center items-center shadow-inner">
           Copyright © 2022 Altynai Fashion
         </footer>

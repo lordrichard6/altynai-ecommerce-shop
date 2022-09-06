@@ -74,16 +74,20 @@ export default function PlaceOrderScreen() {
         <div className="grid md:grid-cols-4 md:gap-5">
           <div className="overflow-x-auto md:col-span-3">
             <div className="card p-5">
-              <h2 className="mb-2 text-lg">Shipping Address</h2>
+              <h2 className="mb-2 text-lg font-bold">Shipping Address</h2>
               <div>
-                {shippingAddress.fullName}, {shippingAddress.address}, {shippingAddress.city}, {shippingAddress.postCode}, {shippingAddress.country}
+                <div>{shippingAddress.fullName}</div>
+                <div>{shippingAddress.address}</div>
+                <div>{shippingAddress.city}</div>
+                <div>{shippingAddress.postCode}</div>
+                <div>{shippingAddress.country}</div>
               </div>
-              <div>
+              <div className="mt-4">
                 <Link href="/payment">Edit</Link>
               </div>
             </div>
             <div className="card overflow-x-auto p-5">
-              <h2 className="mb-2 text-lg">Order Items</h2>
+              <h2 className="mb-2 text-lg font-bold">Order Items</h2>
               <table className="min-w-full">
                 <thead className="border-b">
                   <tr>
@@ -98,7 +102,7 @@ export default function PlaceOrderScreen() {
                     <tr key={item._id} className="border-b">
                       <td>
                         <Link href={`/product/${item.slug}`}>
-                          <a className="flex items-center">
+                          <a className="flex items-center rounded overflow-hidden">
                             <Image
                               src={item.image}
                               alt={item.name}
@@ -117,36 +121,36 @@ export default function PlaceOrderScreen() {
                   ))}
                 </tbody>
               </table>
-              <div>
+              <div className="mt-4">
                 <Link href="/cart">Edit</Link>
               </div>
             </div>
           </div>
           <div>
             <div className="card p-5">
-              <h2 className="mb-2 text-lg">Order Summary</h2>
+              <h2 className="mb-2 text-lg font-bold">Order Summary</h2>
               <ul>
                 <li>
                   <div className="mb-2 flex justify-between">
-                    <div>Items</div>
+                    <div className="font-bold">Items</div>
                     <div>${itemsPrice}</div>
                   </div>
                 </li>
                 <li>
                   <div className="mb-2 flex justify-between">
-                    <div>Tax</div>
+                    <div className="font-bold">Tax</div>
                     <div>${taxPrice}</div>
                   </div>
                 </li>
                 <li>
                   <div className="mb-2 flex justify-between">
-                    <div>Shipping</div>
+                    <div className="font-bold">Shipping</div>
                     <div>${shippingPrice}</div>
                   </div>
                 </li>
                 <li>
                   <div className="mb-2 flex justify-between">
-                    <div>Total</div>
+                    <div className="font-bold">Total</div>
                     <div>${totalPrice}</div>
                   </div>
                 </li>

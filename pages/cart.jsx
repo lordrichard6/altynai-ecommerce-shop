@@ -52,16 +52,16 @@ function CartScreen() {
                   <tr key={item.slug} className="border-b">
                     <td>
                       <Link href={`/product/${item.slug}`}>
-                        <a className="flex items-center">
+                        <a className="flex items-center rounded overflow-hidden">
                           <Image
                             src={item.image}
                             alt={item.name}
-                            width={50}
-                            height={50}
+                            width={80}
+                            height={80}
                             objectFit="cover"
                           ></Image>
                           &nbsp;
-                          {item.name}
+                          <strong>{item.name}</strong> 
                         </a>
                       </Link>
                     </td>
@@ -79,7 +79,7 @@ function CartScreen() {
                         ))}
                       </select>
                     </td>
-                    <td className="p-5 text-right">{item.price}</td>
+                    <td className="p-5 text-right">${item.price}</td>
                     <td className="p-5 text-center">
                       <button onClick={() => removeItemHandler(item)}>
                         <MdRemoveCircleOutline className="h-5 w-5" />
@@ -90,11 +90,11 @@ function CartScreen() {
               </tbody>
             </table>
           </div>
-          <div className="card p-5 bg-slate-100">
+          <div className="card p-5 bg-slate-100 h-max">
             <ul>
               <li>
-                <div className="pb-3 text-xl">
-                  Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}) : $
+                <div className="pb-3 text-xl flex justify-between">
+                  <strong>Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}) :</strong> $
                   {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
                 </div>
               </li>

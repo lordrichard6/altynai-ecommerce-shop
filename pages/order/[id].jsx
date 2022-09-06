@@ -166,7 +166,7 @@ function OrderScreen() {
 
   return (
     <Layout title={`Order ${orderId}`}>
-      <h1 className="mb-4 text-xl">{`Order ${orderId}`}</h1>
+      <h1 className="mb-4 text-xl font-bold">{`Order ${orderId}`}</h1>
       {loading ? (
         <div>Loading...</div>
       ) : error ? (
@@ -175,29 +175,33 @@ function OrderScreen() {
         <div className="grid md:grid-cols-4 md:gap-5">
           <div className="overflow-x-auto md:col-span-3">
             <div className="card p-5">
-              <h2 className="mb-2 text-lg">Shipping Address</h2>
+              <h2 className="mb-2 text-lg font-bold">Shipping Address</h2>
               <div>
-                {shippingAddress.fullName}, {shippingAddress.address},{" "}
-                {shippingAddress.city}, {shippingAddress.postCode},{" "}
-                {shippingAddress.country}
+                <div>{shippingAddress.fullName}</div>
+                <div>{shippingAddress.address}</div>
+                <div>{shippingAddress.city}</div>
+                <div>{shippingAddress.postCode}</div>
+                <div>{shippingAddress.country}</div>
               </div>
               {isDelivered ? (
-                <div className="alert-success">Delivered at {deliveredAt}</div>
+                <div className="alert-success font-bold">
+                  Delivered at {deliveredAt}
+                </div>
               ) : (
-                <div className="alert-error">Not delivered</div>
+                <div className="alert-error font-bold">Not delivered</div>
               )}
             </div>
             <div className="card p-5">
-              <h2 className="mb text-lg">Payment Method</h2>
+              <h2 className="mb text-lg font-bold">Payment Method</h2>
               <div>{paymentMethod}</div>
               {isPaid ? (
-                <div className="alert-success">Paid at {paidAt}</div>
+                <div className="alert-success font-bold">Paid at {paidAt}</div>
               ) : (
-                <div className="alert-error">Not paid</div>
+                <div className="alert-error font-bold">Not paid</div>
               )}
             </div>
             <div className="card overflow-x-auto p-5">
-              <h2 className="mb-2 text-lg">Order Items</h2>
+              <h2 className="mb-2 text-lg font-bold">Order Items</h2>
               <table className="min-w-full">
                 <thead className="border-b">
                   <tr>
@@ -237,29 +241,29 @@ function OrderScreen() {
           </div>
           <div>
             <div className="card p-5">
-              <h2 className="text-lg">OrderSumary</h2>
+              <h2 className="text-lg font-bold">OrderSumary</h2>
               <ul>
                 <li>
                   <div className="mb-2 flex justify-between">
-                    <div>Items</div>
+                    <div className="font-bold">Items</div>
                     <div>${itemsPrice}</div>
                   </div>
                 </li>{" "}
                 <li>
                   <div className="mb-2 flex justify-between">
-                    <div>Tax</div>
+                    <div className="font-bold">Tax</div>
                     <div>${taxPrice}</div>
                   </div>
                 </li>
                 <li>
                   <div className="mb-2 flex justify-between">
-                    <div>Shipping</div>
+                    <div className="font-bold">Shipping</div>
                     <div>${shippingPrice}</div>
                   </div>
                 </li>
                 <li>
                   <div className="mb-2 flex justify-between">
-                    <div>Total</div>
+                    <div className="font-bold">Total</div>
                     <div>${totalPrice}</div>
                   </div>
                 </li>

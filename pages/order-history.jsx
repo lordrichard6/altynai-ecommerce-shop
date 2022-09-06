@@ -64,13 +64,13 @@ function OrderHistoryScreen() {
                   <td className=" p-5 ">${order.totalPrice}</td>
                   <td className=" p-5 ">
                     {order.isPaid
-                      ? `${order.paidAt.substring(0, 10)}`
-                      : "not paid"}
+                      ? <div className="text-green-700">{order.paidAt.substring(0, 10)}</div> 
+                      : <div className="text-red-700">not paid</div>}
                   </td>
                   <td className=" p-5 ">
                     {order.isDelivered
-                      ? `${order.deliveredAt.substring(0, 10)}`
-                      : "not delivered"}
+                      ? <div className="text-green-700">{order.deliveredAt.substring(0, 10)}</div>
+                      : <div className="text-red-700">not delivered</div>}
                   </td>
                   <td className=" p-5 ">
                     <Link href={`/order/${order._id}`} passHref>
