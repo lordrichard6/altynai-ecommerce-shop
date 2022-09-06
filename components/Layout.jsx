@@ -31,9 +31,10 @@ export default function Layout({ title, children }) {
   return (
     <>
       <Head>
-        <title>{title ? title + "- Altynai Fashion" : "Altynai Fashion"}</title>
+        <title>{title ? title + " - Altynai Fashion" : "Altynai Fashion"}</title>
         <meta name="description" content="Ecommerce Website" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="/icon.ico" />
+        <link rel="shortcut icon" href="/icon.ico" />
       </Head>
       <ToastContainer position="bottom-center" limit={1} />
       <div className="flex min-h-screen flex-col justify-between page-background">
